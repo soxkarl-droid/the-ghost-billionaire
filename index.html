@@ -247,6 +247,39 @@ section{padding:96px 0}
 .form-status a{color:#fff;font-weight:800}
 @media(max-width:900px){ .contact-grid{grid-template-columns:1fr} .form-card{padding:24px 20px} }
 
+/* PITCH VIDEO CAMPAIGN */
+.campaign{border-top:1px solid var(--line-soft)}
+.campaign .sec-head .mono{color:var(--blue)}
+.camp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:14px;overflow:hidden;margin-bottom:20px}
+.camp-stat{background:#12141A;padding:18px 20px}
+.camp-stat b{display:block;font-size:1.6rem;line-height:1.05}
+.camp-stat span{display:block;font-family:var(--font-mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);margin-top:7px;line-height:1.5}
+.camp-format{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px}
+.camp-format span{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--silver)}
+@media(max-width:640px){ .camp-stats{grid-template-columns:1fr} }
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.video-card{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--radius);padding:26px 24px;display:flex;flex-direction:column;transition:border-color .25s,background .25s}
+.video-card:hover{border-color:rgba(255,255,255,.2);background:var(--surface2)}
+.video-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.video-num{font-family:var(--font-display);font-size:2.1rem;font-weight:600;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.4);line-height:1}
+.status{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:999px;text-align:center;line-height:1.5;flex-shrink:0}
+.status.ready{background:var(--blue-soft);color:#9DC0FF;border:1px solid rgba(77,141,255,.45)}
+.status.soon{color:var(--faint);border:1px solid var(--line)}
+.video-card h3{font-size:1.14rem;font-weight:800;letter-spacing:-.01em;margin-top:16px;line-height:1.3}
+.video-hook{font-family:var(--font-display);font-style:italic;font-size:1.06rem;line-height:1.42;color:var(--silver);margin-top:10px}
+.video-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);display:block;margin-top:18px}
+.video-shows{color:var(--muted);font-size:.9rem;margin-top:6px;line-height:1.6}
+.video-note{color:var(--faint);font-size:.8rem;margin-top:10px;line-height:1.55}
+.video-cta{margin-top:auto;padding-top:20px}
+.video-cta-box{background:rgba(255,255,255,.04);border:1px solid var(--line-soft);border-radius:12px;padding:13px 15px}
+.video-cta-box span{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);display:block;margin-bottom:5px}
+.video-cta-box p{font-weight:700;font-size:.9rem;line-height:1.45;color:#EDEEF0}
+.video-card .btn{margin-top:14px;align-self:flex-start}
+@media(max-width:1000px){ .video-grid{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:620px){ .video-grid{grid-template-columns:1fr} }
+.campaign-sub{font-family:var(--font-display);font-weight:600;font-size:clamp(1.5rem,3vw,2rem);margin:56px 0 8px}
+.campaign-sub-note{color:var(--muted);margin-bottom:24px;max-width:72ch}
+
 /* CINEMA — SEPARATE */
 .cinema{padding:72px 0;background:var(--bg2)}
 .cinema-shell{border:1px solid rgba(217,160,91,.22);border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;background:var(--surface)}
@@ -364,6 +397,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 30px;background:var(
       <a href="#solutions">Solutions</a>
       <a href="#pricing">Pricing</a>
       <a href="#process">How It Works</a>
+      <a href="#campaign">Pitch Videos</a>
       <a href="#growth">Growth Studio</a>
       <a href="#cinema">AI Cinema</a>
       <a href="#contact">Contact</a>
@@ -376,6 +410,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 30px;background:var(
     <a href="#solutions">Solutions</a>
     <a href="#pricing">Pricing</a>
     <a href="#process">How It Works</a>
+    <a href="#campaign">Pitch Videos — 12-Reel Campaign</a>
     <a href="#growth">Growth Studio — Drop5</a>
     <a href="#cinema">AI Cinema</a>
     <a href="#contact">Contact</a>
@@ -412,7 +447,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 30px;background:var(
       </figure>
     </div>
     <div class="hero-strip"><div class="hero-strip-in">
-      <span>Problem</span><span>→ Financial Loss</span><span>→ Solution</span><span>→ Savings</span><span>→ Pricing</span><span>→ Growth Studio</span><span>→ Contact</span>
+      <span>Problem</span><span>→ Financial Loss</span><span>→ Solution</span><span>→ Savings</span><span>→ Pricing</span><span>→ Pitch Campaign</span><span>→ Growth Studio</span><span>→ Contact</span>
     </div></div>
   </div>
 </div>
@@ -678,6 +713,165 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 30px;background:var(
     <div class="sec-cta">
       <a class="btn btn-light" href="#contact">Start With Step 01 <span class="arr">→</span></a>
       <p>Tell us what consumes your time — by email or Instagram DM.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5A — PITCH VIDEO CAMPAIGN -->
+<section class="campaign" id="campaign">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono">New Category — The Pitch Campaign</span>
+      <h2>TWELVE REELS. <em>ONE CLEAR MESSAGE.</em></h2>
+      <p>Our Instagram pitch campaign for @the_ghost_billionaire: twelve short videos, each built around one real business problem — the cost of doing repetitive work by hand — and one clear next step. Every video is a premium Reel: vertical, subtitled, professionally voiced, with the hook in the first two seconds. No invented testimonials, no guaranteed savings, no fake results.</p>
+    </div>
+
+    <div class="camp-stats" aria-label="Campaign status at a glance">
+      <div class="camp-stat"><b>3 ready</b><span>Videos 1–3 built — drafts awaiting approval</span></div>
+      <div class="camp-stat"><b>9 in production</b><span>Videos 4–12 in production — coming soon</span></div>
+      <div class="camp-stat"><b>0 published</b><span>Nothing is live on Instagram yet — stated plainly</span></div>
+    </div>
+
+    <div class="camp-format" aria-label="Video format">
+      <span>Instagram Reels</span><span>Vertical 9:16 · 1080 × 1920</span><span>20–40 seconds each</span><span>Hook in the first 2 seconds</span><span>Subtitles on every video</span><span>Professional English voiceover</span><span>One clear CTA per video</span>
+    </div>
+
+    <div class="video-grid">
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">01</span><span class="status ready">Ready · Awaiting Approval</span></div>
+        <h3>The Cost of Manual Work</h3>
+        <p class="video-hook">&ldquo;How much money is your business wasting on repetitive tasks?&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">A business owner manually scheduling posts, switching between platforms, uploading videos and updating spreadsheets — then an intelligent automated workflow handling the repetitive work instead. It closes on the line: &ldquo;Your time is expensive. Automate the repetitive work.&rdquo;</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>DM &ldquo;AUTOMATE&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 1 — The Cost of Manual Work">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">02</span><span class="status ready">Ready · Awaiting Approval</span></div>
+        <h3>Instagram on Autopilot</h3>
+        <p class="video-hook">&ldquo;Still scheduling every Instagram post manually?&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">A creator juggling multiple posts and struggling to hit deadlines — then a workflow that prepares, schedules and publishes approved content, so publishing stops depending on someone remembering to post.</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;Let&rsquo;s automate your Instagram workflow. DM us.&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 2 — Instagram on Autopilot">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">03</span><span class="status ready">Ready · Awaiting Approval</span></div>
+        <h3>Three Platforms, One Workflow</h3>
+        <p class="video-hook">&ldquo;Managing Instagram, Facebook and YouTube separately?&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">The same content being uploaded and managed three separate times, platform by platform — then one unified workflow that handles content distribution across all three from a single process.</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;Choose one platform, two platforms or all three. We build around your needs.&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 3 — Three Platforms, One Workflow">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">04</span><span class="status soon">In Production · Coming Soon</span></div>
+        <h3>Agency Owners</h3>
+        <p class="video-hook">&ldquo;Running a social media agency? Stop wasting your team&rsquo;s time.&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">An agency team managing multiple client accounts and repetitive publishing operations by hand — and how automation streamlines those approved workflows so the team can focus on clients, not uploads.</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;Agency owners, let&rsquo;s talk automation.&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 4 — Agency Owners">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">05</span><span class="status soon">In Production · Coming Soon</span></div>
+        <h3>YouTube Creators</h3>
+        <p class="video-hook">&ldquo;Your job is to create videos, not spend all day managing uploads.&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">The full YouTube publishing routine — preparing files, titles, descriptions and uploads — and how automated upload preparation takes the repetitive parts off the creator&rsquo;s plate.</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;DM &lsquo;YOUTUBE&rsquo; to discuss your workflow.&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 5 — YouTube Creators">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">06</span><span class="status soon">In Production · Coming Soon</span></div>
+        <h3>The Automation Opportunity</h3>
+        <p class="video-hook">&ldquo;What if you could save 10 hours every week?&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">An illustrative before-and-after comparison of a manual process and an automated one, so you can picture what the same week looks like with the repetitive work handled by a system.</p>
+        <p class="video-note">All time figures in this video are hypothetical examples used to illustrate the idea — they are not promised or guaranteed results.</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;Let&rsquo;s calculate your automation opportunity.&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 6 — The Automation Opportunity">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">07</span><span class="status soon">In Production · Coming Soon</span></div>
+        <h3>AI Automation Explained</h3>
+        <p class="video-hook">&ldquo;AI automation isn&rsquo;t just about ChatGPT.&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">A plain-English explanation of how different tools, platforms, APIs and workflows connect and work together — shown as a simple visual workflow anyone can follow, no technical background needed.</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;Need a workflow built for your business? Contact us.&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 7 — AI Automation Explained">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">08</span><span class="status soon">In Production · Coming Soon</span></div>
+        <h3>Business Owners</h3>
+        <p class="video-hook">&ldquo;How many hours does your team spend doing the same tasks every day?&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">Everyday repetitive business operations — the same tasks, done the same way, day after day — and a simple explanation of why repetitive, rule-based tasks are the ones that can be automated.</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;Stop repeating. Start automating.&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 8 — Business Owners">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">09</span><span class="status soon">In Production · Coming Soon</span></div>
+        <h3>Instagram + Facebook</h3>
+        <p class="video-hook">&ldquo;Why manage two platforms with two separate manual processes?&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">One piece of content being prepared and posted twice through two separate manual routines — then a single cross-platform publishing workflow that covers Instagram and Facebook together.</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;Get your social media workflow simplified.&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 9 — Instagram + Facebook">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">10</span><span class="status soon">In Production · Coming Soon</span></div>
+        <h3>Custom Automation</h3>
+        <p class="video-hook">&ldquo;Your business is unique. Your automation should be too.&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">Customized workflows and integrations built around how one specific business actually works — not an off-the-shelf template forced onto a process it doesn&rsquo;t fit.</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;Tell us what you want to automate.&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 10 — Custom Automation">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">11</span><span class="status soon">In Production · Coming Soon</span></div>
+        <h3>Before and After</h3>
+        <p class="video-hook">&ldquo;Manual workflow versus automated workflow.&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">A split-screen demonstration. Left: manual content management, step by step. Right: automated preparation, scheduling, notifications and reporting for the same job — side by side, so you can compare them directly.</p>
+        <p class="video-note">This is a realistic demonstration of two workflows — it is not fabricated customer results, and no client outcome is claimed.</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;Which workflow would you choose?&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 11 — Before and After">Enquire About This Workflow →</a></div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-top"><span class="video-num">12</span><span class="status soon">In Production · Coming Soon</span></div>
+        <h3>Direct Sales Pitch</h3>
+        <p class="video-hook">&ldquo;We build AI automation systems for businesses, creators and agencies.&rdquo;</p>
+        <span class="video-label">What it shows</span>
+        <p class="video-shows">The full offer, stated directly: Instagram automation, Facebook automation, YouTube automation, multi-platform workflows and custom AI automation. It closes on the line: &ldquo;One platform or multiple platforms. We build the system you need.&rdquo;</p>
+        <div class="video-cta"><div class="video-cta-box"><span>Call to action</span><p>&ldquo;DM @the_ghost_billionaire.&rdquo;</p></div>
+        <a class="btn btn-ghost btn-sm" href="#contact" data-service="Video 12 — Direct Sales Pitch">Enquire About This Workflow →</a></div>
+      </article>
+    </div>
+
+    <h3 class="campaign-sub">How the campaign rolls out</h3>
+    <p class="campaign-sub-note">A steady release, not a dump of all twelve at once — so each video gets its own day, its own audience, and a fair read on what works.</p>
+    <div class="steps">
+      <article class="step"><div class="big">01</div><h3>One Reel per day</h3><p>The twelve videos publish one at a time, one per day — never all at once.</p></article>
+      <article class="step"><div class="big">02</div><h3>Rotate the angle</h3><p>The order rotates between business pain points, Instagram automation, YouTube automation, agency automation, demonstrations and direct service pitches.</p></article>
+      <article class="step"><div class="big">03</div><h3>Approval before publishing</h3><p>Every video is finished and reviewed as a draft first. Videos 1–3 are ready and waiting; nothing goes live without approval.</p></article>
+      <article class="step"><div class="big">04</div><h3>Measure, then improve</h3><p>After publication we track views, average watch time, retention, shares, saves, profile visits, DMs and qualified enquiries — and shape the next videos around the real numbers.</p></article>
+    </div>
+
+    <div class="sec-cta">
+      <a class="btn btn-blue" href="#contact" data-service="Pitch Campaign — General Enquiry">Ask About the Campaign <span class="arr">→</span></a>
+      <p>Saw a video that matches your problem — or want one of these workflows built for your business? Tell us which one.</p>
     </div>
   </div>
 </section>
@@ -985,6 +1179,21 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 30px;background:var(
               <option>Multi-Platform Automation</option>
               <option>Custom AI Workflows</option>
               <option>AI Cinematic Video Training</option>
+              <optgroup label="Pitch Video Campaign — 12 Reels">
+                <option>Pitch Campaign — General Enquiry</option>
+                <option>Video 1 — The Cost of Manual Work</option>
+                <option>Video 2 — Instagram on Autopilot</option>
+                <option>Video 3 — Three Platforms, One Workflow</option>
+                <option>Video 4 — Agency Owners</option>
+                <option>Video 5 — YouTube Creators</option>
+                <option>Video 6 — The Automation Opportunity</option>
+                <option>Video 7 — AI Automation Explained</option>
+                <option>Video 8 — Business Owners</option>
+                <option>Video 9 — Instagram + Facebook</option>
+                <option>Video 10 — Custom Automation</option>
+                <option>Video 11 — Before and After</option>
+                <option>Video 12 — Direct Sales Pitch</option>
+              </optgroup>
               <option>Drop5 — Free Mini Audit</option>
               <option>Drop5 — YouTube Audit ($149)</option>
               <option>Drop5 — YouTube Growth</option>
@@ -1060,6 +1269,7 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 30px;background:var(
         <a href="#solutions">Solutions</a>
         <a href="#pricing">Pricing</a>
         <a href="#process">How It Works</a>
+        <a href="#campaign">Pitch Video Campaign</a>
         <a href="#growth">Growth Studio — Drop5</a>
         <a href="#contact">Contact</a>
       </div>
