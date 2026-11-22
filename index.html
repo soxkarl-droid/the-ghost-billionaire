@@ -348,6 +348,44 @@ section{padding:96px 0}
 .back-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;text-decoration:none;font-weight:700;font-size:.9rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:10px 18px;margin-bottom:36px;transition:color .2s,border-color .2s}
 .back-link:hover{color:var(--text);border-color:rgba(255,255,255,.4)}
 
+/* AI CHAT WIDGET */
+.chat-fab{position:fixed;right:18px;bottom:14px;z-index:120;display:flex;flex-direction:column;align-items:center;gap:2px;background:transparent;border:none;padding:4px;cursor:pointer;min-height:0}
+.chat-fab .ghost-wrap{width:86px;height:104px;filter:drop-shadow(0 12px 22px rgba(0,0,0,.55));animation:ghostBob 3.2s ease-in-out infinite,ghostNudge 7s ease-in-out infinite;transform-origin:50% 85%}
+@keyframes ghostBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes ghostNudge{0%,86%,100%{rotate:0deg}89%{rotate:-5deg}92%{rotate:5deg}95%{rotate:-3deg}98%{rotate:0deg}}
+.chat-fab:hover .ghost-wrap{animation-duration:1.6s,7s}
+.ghost-arm{transform-origin:70px 62px;animation:ghostWave 7s ease-in-out infinite}
+@keyframes ghostWave{0%,80%,100%{transform:rotate(0deg)}83%{transform:rotate(-32deg)}86%{transform:rotate(8deg)}89%{transform:rotate(-32deg)}92%{transform:rotate(8deg)}95%{transform:rotate(0deg)}}
+.ghost-eyes{transform-origin:50px 44px;animation:ghostBlink 4.6s ease-in-out infinite}
+@keyframes ghostBlink{0%,93%,100%{transform:scaleY(1)}95.5%{transform:scaleY(.08)}}
+.ghost-hat{transform-origin:50px 22px;animation:hatTip 7s ease-in-out infinite}
+@keyframes hatTip{0%,80%,100%{transform:rotate(0deg)}86%,92%{transform:rotate(-7deg)}}
+.chat-fab .chat-label{display:inline-flex;align-items:center;gap:7px;background:var(--blue-deep);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 14px;font-weight:800;font-size:.78rem;box-shadow:0 10px 24px rgba(0,0,0,.45);white-space:nowrap}
+.chat-fab:hover .chat-label{background:var(--blue)}
+.chat-fab .chat-dot{width:8px;height:8px;border-radius:50%;background:#7CFFC4;flex-shrink:0}
+@media (prefers-reduced-motion: reduce){ .chat-fab .ghost-wrap,.ghost-arm,.ghost-eyes,.ghost-hat{animation:none} }
+.chat-panel{position:fixed;right:20px;bottom:178px;z-index:121;width:min(400px,calc(100vw - 32px));height:min(560px,calc(100dvh - 200px));background:var(--surface2);border:1px solid var(--line);border-radius:20px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.chat-panel.open{display:flex}
+.chat-head{background:#0D0F14;border-bottom:1px solid var(--line-soft);padding:16px 18px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.chat-head h3{font-size:1.02rem;font-weight:800;line-height:1.3}
+.chat-head p{color:var(--muted);font-size:.8rem;margin-top:3px;line-height:1.45}
+.chat-close{background:transparent;border:1px solid var(--line);color:var(--text);width:40px;height:40px;min-height:40px;border-radius:10px;cursor:pointer;font-size:1.1rem;line-height:1;flex-shrink:0}
+.chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.chat-msg{max-width:88%;padding:11px 14px;border-radius:14px;font-size:.9rem;line-height:1.55;white-space:pre-wrap;word-break:break-word}
+.chat-msg.bot{background:#1B1E26;border:1px solid var(--line-soft);color:#E8E9EC;align-self:flex-start;border-bottom-left-radius:4px}
+.chat-msg.user{background:var(--blue-deep);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.chat-msg a{color:#9DC0FF;font-weight:700}
+.chat-chips{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 12px}
+.chat-chip{border:1px solid var(--line);background:var(--surface);color:var(--silver);border-radius:999px;padding:8px 13px;font-size:.8rem;font-weight:700;cursor:pointer;min-height:38px}
+.chat-chip:hover{border-color:rgba(255,255,255,.4);color:#fff}
+.chat-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line-soft);background:#0D0F14}
+.chat-form input{flex:1;min-width:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;color:var(--text);padding:11px 13px;font-size:.95rem;min-height:48px}
+.chat-form input:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px var(--blue-soft)}
+.chat-send{background:var(--text);color:#0A0B0E;border:none;border-radius:12px;padding:0 18px;font-weight:800;cursor:pointer;min-height:48px}
+.chat-send:hover{background:#fff}
+.chat-note{padding:0 16px 12px;color:var(--faint);font-size:.74rem;line-height:1.5;background:transparent}
+@media(max-width:520px){ .chat-fab{right:12px;bottom:10px} .chat-fab .ghost-wrap{width:72px;height:87px} .chat-fab .ghost-wrap svg{width:72px;height:87px} .chat-panel{right:16px;bottom:158px;height:min(520px,calc(100dvh - 178px))} }
+
 /* FOOTER */
 footer{border-top:1px solid var(--line-soft);padding:56px 0 30px;background:var(--bg2)}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
@@ -1095,6 +1133,74 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 30px;background:var(
   </div>
 </footer>
 
+<!-- AI ASSISTANT WIDGET -->
+<button type="button" class="chat-fab" id="chatFab" aria-expanded="false" aria-controls="chatPanel" aria-label="Open AI assistant chat">
+  <span class="ghost-wrap" aria-hidden="true">
+    <svg viewBox="0 0 100 122" width="86" height="104" role="presentation" focusable="false">
+      <!-- gold top hat -->
+      <g class="ghost-hat">
+        <ellipse cx="50" cy="26" rx="30" ry="6" fill="#D9A05B"/>
+        <path d="M32 26 L35 4 Q50 -1 65 4 L68 26 Z" fill="#E5B26E"/>
+        <rect x="33.5" y="19" width="33" height="6" fill="#171106"/>
+        <ellipse cx="50" cy="4.5" rx="15" ry="3.4" fill="#F0C687"/>
+      </g>
+      <!-- waving arm (behind body edge) -->
+      <g class="ghost-arm">
+        <path d="M68 58 Q86 50 88 34" fill="none" stroke="#F4F2EC" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="88" cy="32" r="6" fill="#F4F2EC"/>
+      </g>
+      <!-- ghost body -->
+      <path d="M50 24 C31 24 22 40 22 58 L22 100 L33 91 L44 100 L55 91 L66 100 L77 91 L77 58 C77 40 69 24 50 24 Z" fill="#F4F2EC"/>
+      <!-- black tuxedo -->
+      <path d="M31 66 L50 96 L69 66 L69 92 L61 85 L50 99 L39 85 L31 92 Z" fill="#14151A"/>
+      <path d="M50 70 L41 62 L50 88 L59 62 Z" fill="#F4F2EC"/>
+      <!-- gold lapels -->
+      <path d="M41 62 L50 74 L38 70 Z" fill="#D9A05B"/>
+      <path d="M59 62 L50 74 L62 70 Z" fill="#D9A05B"/>
+      <!-- gold bow tie -->
+      <path d="M50 76 L41 70 L41 82 Z M50 76 L59 70 L59 82 Z" fill="#D9A05B"/>
+      <circle cx="50" cy="76" r="3" fill="#B97F35"/>
+      <!-- gold buttons -->
+      <circle cx="50" cy="86" r="1.9" fill="#D9A05B"/>
+      <circle cx="50" cy="93" r="1.9" fill="#D9A05B"/>
+      <!-- face -->
+      <g class="ghost-eyes">
+        <ellipse cx="40" cy="44" rx="3.6" ry="5" fill="#14151A"/>
+        <ellipse cx="60" cy="44" rx="3.6" ry="5" fill="#14151A"/>
+        <circle cx="41.4" cy="42" r="1.3" fill="#fff"/>
+        <circle cx="61.4" cy="42" r="1.3" fill="#fff"/>
+      </g>
+      <path d="M45 54 Q50 59 55 54" fill="none" stroke="#14151A" stroke-width="2.4" stroke-linecap="round"/>
+      <ellipse cx="33" cy="52" rx="4.4" ry="2.8" fill="#F3B8C6" opacity=".75"/>
+      <ellipse cx="67" cy="52" rx="4.4" ry="2.8" fill="#F3B8C6" opacity=".75"/>
+      <!-- resting arm -->
+      <path d="M25 62 Q16 70 19 80" fill="none" stroke="#F4F2EC" stroke-width="8" stroke-linecap="round"/>
+    </svg>
+  </span>
+  <span class="chat-label"><span class="chat-dot" aria-hidden="true"></span> Ask AI Assistant</span>
+</button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="AI assistant chat">
+  <div class="chat-head">
+    <div><h3>Ghost Assistant</h3><p>Answers only from this website. Short, plain answers — no guessing.</p></div>
+    <button type="button" class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs" aria-live="polite"></div>
+  <div class="chat-chips" id="chatChips" aria-label="Suggested questions">
+    <button type="button" class="chat-chip">What are your prices?</button>
+    <button type="button" class="chat-chip">What automation do you build?</button>
+    <button type="button" class="chat-chip">Growth Studio services</button>
+    <button type="button" class="chat-chip">AI video training</button>
+    <button type="button" class="chat-chip">How do I start?</button>
+    <button type="button" class="chat-chip">How does the calculator work?</button>
+  </div>
+  <p class="chat-note">I only use information on this site. If I don&rsquo;t know, I&rsquo;ll say so and point you to email or Instagram.</p>
+  <form class="chat-form" id="chatForm">
+    <label for="chatInput" class="mono" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Type your question</label>
+    <input id="chatInput" type="text" placeholder="Ask about pricing, services, Growth Studio…" autocomplete="off" maxlength="300" />
+    <button type="submit" class="chat-send">Send</button>
+  </form>
+</div>
+
 <script>
 (function(){
   "use strict";
@@ -1290,6 +1396,143 @@ footer{border-top:1px solid var(--line-soft);padding:56px 0 30px;background:var(
   ['inp-name','inp-email','inp-service','inp-msg'].forEach(function(id){
     document.getElementById(id).addEventListener('input',function(){ this.closest('.field').classList.remove('invalid'); });
   });
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  var fab=document.getElementById('chatFab'), panel=document.getElementById('chatPanel'),
+      closeBtn=document.getElementById('chatClose'), msgs=document.getElementById('chatMsgs'),
+      form=document.getElementById('chatForm'), input=document.getElementById('chatInput'),
+      chips=document.getElementById('chatChips');
+  if(!fab||!panel) return;
+  var CONTACT="Email elysre.store@gmail.com or DM @the_ghost_billionaire on Instagram.";
+  var FALLBACK="I don't have that information on this website, so I can't answer it accurately. Please "+CONTACT+" They can help you directly.";
+  var DIVS=[
+    {n:"YouTube Growth",c:12,p:"$149 one-time audit to start",s:"YouTube Channel Audits; Niche & Audience Research; YouTube Content Strategy; Video Topic & Idea Research; Titles & Thumbnail Strategy; Video Hooks & Audience Retention; Upload & Publishing Strategy; Channel Positioning & Branding; YouTube Analytics Review; YouTube Monetization Strategy; YouTube Channel Improvement Consulting; YouTube Coaching & One-to-One Consultation"},
+    {n:"Faceless YouTube",c:13,p:"$299 strategy blueprint to start",s:"Faceless Channel Concepts; Faceless Channel Launch Blueprints; Niche Selection & Validation; Video Research & Scripting; Voice-over Planning & Coordination; Visual Research & Selection; AI Image & Video Prompt Development; Scene-by-Scene Video Planning; Faceless Video Editing & Production; YouTube Shorts Creation; Titles, Thumbnails & Metadata; Complete Channel Content Management; Recurring Video Production Packages"},
+    {n:"Social Media",c:24,p:"$699 per month, fully managed",s:"Social Media Audits; Social Media Strategy; Social Media Account Management; Facebook Page Management & Growth; Instagram Management & Growth; TikTok Content & Account Management; YouTube Content & Channel Management; LinkedIn Content & Business Page Management; X (Twitter) Content Management; Pinterest Content Strategy; Snapchat Content Strategy; Threads Content Strategy; Reddit Content Strategy; WhatsApp Channels Content Planning; Telegram Channel Content Planning; Twitch Content & Channel Strategy; Cross-Platform Content Repurposing; Content Calendars & Publishing; Social Media Captions & Copywriting; Short-Form Video Editing; Reels, Shorts and TikTok Videos; Community Management & Engagement; Profile Optimization; Monthly Analytics & Performance Reviews"},
+    {n:"Performance Marketing",c:20,p:"$500 per month, plus your ad spend",s:"Google Ads Management; Google Search Advertising; Google Shopping Campaigns; Performance Max Campaigns; Meta Ads Management; Facebook Ads; Instagram Ads; YouTube Ads; Local Business Advertising; E-commerce Advertising; Lead Generation Campaigns; Remarketing & Retargeting; Audience Research & Targeting; Ad Creative Strategy; AI-Assisted Ad Creative Production; A/B Testing & Creative Experiments; Conversion Tracking; Google Analytics & Campaign Reporting; Landing Page & Funnel Recommendations; Advertising Account Audits"},
+    {n:"Google Business Profile & Local",c:20,p:"$199 optimization to start",s:"Google Business Profile Setup; New Business Profile Creation; Profile Verification Assistance; Business Profile Optimization; Google Maps Visibility & Local Ranking Strategy; Local SEO Audits; Local Keyword & Competitor Research; Business Categories, Services & Attributes Optimization; Business Description & Service Content; Business Photos & Visual Optimization; Google Business Profile Posts; Review Response & Reputation Management; Duplicate Listing Investigation; Profile Ownership & Access Disputes; Suspended Profile Diagnosis; Eligible Profile Appeal & Reinstatement Assistance; Business Information Consistency; Local Landing Page Recommendations; Local Search Performance Reporting; Ongoing Google Business Profile Management"},
+    {n:"AI Filmmaking",c:22,p:"$399 per project to start",s:"AI Film Production; AI Short Films; AI Cinematic Video Production; AI Music Creation; AI Music Video Production; Lyrics-to-Visual Music Videos; AI-Assisted Song Visualizers; Story Development & Scriptwriting; Cinematic Storyboards; Scene-by-Scene Production Planning; Character Design & Reference Sheets; Character Identity Consistency; Same-Face Identity Continuity; Character-to-Audio Synchronization; Lip-Sync & Performance Synchronization; Environment & Wardrobe Continuity; AI Image-to-Video Workflows; AI Video Prompt Engineering; AI Voice-over Production; Sound Design & Video Editing; Music Promotion Videos; Promotional Cinematic Content"},
+    {n:"AI Advertising & Influencer",c:14,p:"$450 per campaign to start",s:"AI-Assisted Brand Advertising; AI Video Ads; AI Product Ads; Local Business Promotional Campaigns; E-commerce Brand Campaigns; Social Media Advertising Creatives; Campaign Concepts & Storyboards; Influencer Marketing Strategy; Influencer Discovery & Vetting; Influencer Outreach & Campaign Coordination; Sponsored Content Planning; Creator Briefs & Deliverables; Influencer Campaign Reporting; Brand Content Repurposing"},
+    {n:"AI Product Photography",c:12,p:"$149 per image pack to start",s:"AI Product Image Creation; Multi-Angle Product Image Generation; E-commerce Product Gallery Creation; White Background Product Images; Lifestyle Product Images; Product Detail & Feature Visuals; Website Product Showcase Images; Product Infographics; Advertising Product Creatives; Product Image Variations for Social Media; Product Launch Visual Campaigns; Image Resizing & Platform Formatting"},
+    {n:"E-Commerce",c:18,p:"$299 store setup to start",s:"Shopify Store Setup; WordPress & WooCommerce Store Setup; Store Design & Positioning; Product Research; Product Page Optimization; Landing Page Planning; Conversion-Focused Copywriting; Dropshipping Business Consultation; Supplier Evaluation Guidance; Pricing & Margin Analysis; Affiliate Marketing Strategy; Affiliate Funnel Planning; Offer Positioning & Messaging; Email Funnel Planning; Organic Traffic Strategy; Paid Traffic Strategy; E-commerce Creative Strategy; Store Conversion Audits"},
+    {n:"Hospitality",c:10,p:"$399 per month to start",s:"Hotel Branding & Digital Marketing; Restaurant Branding & Digital Marketing; Menu Design; Promotional Signage & Marketing Designs; Local Business Social Media; Google Business Profile Management; Local Advertising Campaigns; Offers & Seasonal Promotional Campaigns; Hospitality Content Creation; Website Visuals & Promotional Content"},
+    {n:"Consulting & Training",c:10,p:"$199 per hour session",s:"Digital Growth Consulting; YouTube Channel Coaching; Social Media Growth Consulting; Paid Advertising Consultation; Dropshipping Mentoring; Affiliate Marketing Mentoring; AI Content Production Workshops; Private Training Sessions; Business-Specific Marketing Strategy; Team Workshops & Content Workflow Training"}
+  ];
+  function addMsg(text,who){
+    var d=document.createElement('div'); d.className='chat-msg '+who; d.textContent=text; msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight; return d;
+  }
+  function has(q){ for(var i=0;i<arguments.length-0;i++){} return false; }
+  function includesAny(q,words){ for(var i=0;i<words.length;i++){ if(q.indexOf(words[i])!==-1) return true; } return false; }
+  function divAnswer(d){ return d.n+" ("+d.c+" services) — starts at "+d.p+".\nServices: "+d.s+".\nTo enquire, "+CONTACT; }
+  function findDivision(q){
+    for(var i=0;i<DIVS.length;i++){ var n=DIVS[i].n.toLowerCase(); if(q.indexOf(n)!==-1) return DIVS[i]; }
+    var keys=[["youtube growth","faceless"],["faceless"],["social media"],["performance marketing","paid ads","google ads","meta ads","advertising account"],["google business","local seo","google maps"],["ai filmmaking","ai film"],["ai advertising","influencer"],["product photography","product image"],["e-commerce","ecommerce","shopify","woocommerce"],["hospitality","hotel","restaurant"],["consulting","training","coaching","workshop"]];
+    for(var j=0;j<keys.length;j++){ for(var k=0;k<keys[j].length;k++){ if(q.indexOf(keys[j][k])!==-1) return DIVS[j]; } }
+    return null;
+  }
+  function findService(q){
+    for(var i=0;i<DIVS.length;i++){ var list=DIVS[i].s.split('; '); for(var j=0;j<list.length;j++){ if(q.indexOf(list[j].toLowerCase())!==-1 && list[j].length>6) return {div:DIVS[i],svc:list[j]}; } }
+    return null;
+  }
+  function answer(raw){
+    var q=' '+raw.toLowerCase().replace(/[^a-z0-9&+ ]/g,' ')+' ';
+    q=q.replace(/\s+/g,' ');
+    // Greeting
+    if(/^\s*(hi|hello|hey)\b/.test(raw.toLowerCase()) && raw.trim().length<20) return "Hi! I can help with automation pricing, services, the savings calculator, Growth Studio, and AI video training. What would you like to know?";
+    // Contact
+    if(includesAny(q,["contact","email address","your email","phone","whatsapp number","how to reach","instagram handle","your website","tgb"])) {
+      if(q.indexOf("drop5")!==-1||q.indexOf("growth")!==-1) return "For Growth Studio (Drop5), the site lists hello@drop5studios.com and a WhatsApp link on the Growth Studio page. For The Ghost Billionaire: email elysre.store@gmail.com, Instagram @the_ghost_billionaire, website https://tgb.autos.";
+      return "You can reach The Ghost Billionaire at:\n• Email: elysre.store@gmail.com\n• Instagram: @the_ghost_billionaire\n• Website: https://tgb.autos";
+    }
+    // Calculator
+    if(includesAny(q,["calculator","calculate","formula","how much can i save","how much do i save","savings work","efficiency"])) {
+      return "The Automation Savings Calculator uses your own numbers:\nMonthly manual cost = Weekly hours × 4.33 × Hourly cost × Number of people.\nPotential savings = Monthly manual cost × Estimated automation efficiency.\nEfficiency is set between 40% (conservative) and 60% (upper estimate), default 50%. All results are estimates from your inputs — savings are not guaranteed. Scroll to the Calculator section to try it with your real numbers.";
+    }
+    if(includesAny(q,["guarantee","guaranteed saving","promise results","guarantee views","guarantee ranking"])) {
+      return "No. The website does not guarantee savings, views, subscribers, rankings, or sales. The calculator shows estimates from your inputs, and Growth Studio states clearly: no guaranteed views, rankings, or sales — just a real system, tracked and reported.";
+    }
+    if(includesAny(q,["mini audit","free mini"])) return "The Free Mini Digital Presence Audit (Growth Studio) is free with no obligation. Pick one focus — YouTube, social, Google, or your store. You get a 1-page teardown with 3 fixes you can use right away, and a reply within 1 business day. To claim it, use the form on this site or "+CONTACT;
+    if(q.indexOf("youtube audit")!==-1) return "The Growth Studio YouTube Audit is $149 one-time. It includes a full channel + top 10 videos audit, titles/thumbnails & retention notes, and a prioritized 30-day action plan. Note: this is different from the $99 Automation Audit.";
+    // Maintenance
+    if(includesAny(q,["maintenance","monthly cost","monthly fee","ongoing cost"])) {
+      if(q.indexOf("growth studio")!==-1||q.indexOf("drop5")!==-1) return "Growth Studio monthly options on this site include Social Management at $699/month and Paid Ads Management at $500/month (plus your ad spend, paid directly to Google/Meta). Monthly plans run on 30-day cycles.";
+      return "Optional maintenance for automation packages:\n• Starter: $49/month\n• Growth: $99/month\n• Business: $149/month\n• Custom: quoted with scope.\nMaintenance is optional. Third-party software, API charges, and extra custom development are not included unless stated in your agreed scope.";
+    }
+    // Specific packages
+    if(q.indexOf("audit")!==-1&&q.indexOf("growth")==-1&&q.indexOf("youtube")==-1&&q.indexOf("mini")==-1&&q.indexOf("drop5")==-1) return "The Automation Audit is $99 one-time. We review your repetitive work and map exactly what can be automated. The full $99 is credited toward any build you start within 30 days. To book it, "+CONTACT;
+    if(q.indexOf("starter")!==-1) return "Starter is $249 one-time: one social media platform, one agreed automation workflow, testing and handover. Optional maintenance is $49/month.";
+    if(q.indexOf("business package")!==-1||(q.indexOf("business")!==-1&&q.indexOf("899")!==-1)) return "Business is $899 one-time: three social media platforms, up to five agreed workflows, and cross-platform workflow configuration. Optional maintenance is $149/month.";
+    if(q.indexOf("custom")!==-1&&includesAny(q,["price","cost","package","automation","1499"])) return "Custom starts from $1,499, with a scope-based quotation. It covers advanced workflows, custom integrations, and business-specific automation. Maintenance is quoted with scope.";
+    if(includesAny(q,["growth package","growth plan"])||(q.indexOf("growth")!==-1&&q.indexOf("499")!==-1)) return "The Growth automation package is $499 one-time: two social media platforms, up to three agreed workflows, testing and documentation. Optional maintenance is $99/month. Note: this is different from the Growth Studio category below.";
+    // Pricing general
+    if(includesAny(q,["price","pricing","cost","how much","packages","plans"])) {
+      if(q.indexOf("growth studio")!==-1||q.indexOf("drop5")!==-1) return "Growth Studio pricing preview on this site:\n• YouTube Audit: $149 one-time\n• Social Management: $699/month\n• Paid Ads Management: $500/month (plus your ad spend)\nEach division also has its own starting price — ask me about a division, e.g. 'AI Filmmaking price'. Full details are on the Growth Studio page.";
+      return "Automation pricing (all one-time setup):\n• Automation Audit: $99 (credited in full toward a build within 30 days)\n• Starter: $249 — 1 platform, 1 workflow\n• Growth: $499 — 2 platforms, up to 3 workflows\n• Business: $899 — 3 platforms, up to 5 workflows\n• Custom: from $1,499 — scope-based quote\nOptional maintenance: $49 / $99 / $149 per month. Third-party software and API charges are not included unless stated in your scope.";
+    }
+    // Automation services detail
+    if(q.indexOf("instagram")!==-1&&q.indexOf("growth studio")==-1&&!includesAny(q,["management & growth","social media"])) return "Instagram Automation covers: post and Reel scheduling, content publishing workflows, AI-assisted captions, and content organization — for consistent publishing without the daily manual routine. It is included depending on your package (Starter = 1 platform, Growth = 2, Business = 3).";
+    if(q.indexOf("facebook")!==-1&&q.indexOf("growth studio")==-1) return "Facebook Automation covers: automated publishing, content scheduling, and cross-platform workflows to keep your Page active and connected to the rest of your system.";
+    if((q.indexOf("youtube automation")!==-1)||(q.indexOf("youtube")!==-1&&includesAny(q,["automat","upload","publish"]))) return "YouTube Automation covers: upload preparation, publishing and scheduling, titles and descriptions assistance, and content repurposing — an organized pipeline from finished video to published upload.";
+    if(includesAny(q,["multi-platform","multi platform","all three","all platforms"])) return "Multi-Platform Automation connects one system across the platforms you use. Options listed on the site: Instagram + Facebook, Instagram + YouTube, Facebook + YouTube, or all three platforms.";
+    if(includesAny(q,["n8n","make.com","zapier","api integration","custom ai","custom workflow"])) return "Custom AI Automation is for workflows beyond social publishing, scoped to your business process. Tools/integrations listed on the site: n8n, Make.com, Zapier, API integrations, and custom AI workflows. Custom builds start from $1,499 with a scope-based quote.";
+    if(includesAny(q,["what automation","automation do you","automation services","what do you build","your services","what services do you offer"])&&q.indexOf("growth")==-1) {
+      return "We build 5 types of automation:\n1. Instagram Automation — scheduling, publishing workflows, AI-assisted captions\n2. Facebook Automation — automated publishing, scheduling, cross-platform workflows\n3. YouTube Automation — upload prep, publishing/scheduling, titles & descriptions, repurposing\n4. Multi-Platform Automation — Instagram, Facebook and YouTube in one system\n5. Custom AI Automation — n8n, Make.com, Zapier, API integrations\nWe design, build, test and hand over the workflow. Ask me about any one for details.";
+    }
+    // How it works - automation
+    if(includesAny(q,["how it works","how does it work","process","steps","how do i start","get started","how to start"])&&q.indexOf("growth")==-1&&q.indexOf("drop5")==-1) {
+      return "How it works — 4 steps:\n1. Tell us what consumes your time (tasks, platforms, hours per week).\n2. We identify repetitive tasks — what can be automated, what needs your approval, what stays manual.\n3. We design and build your automation around your content, schedule and platforms.\n4. We test, configure and hand over your system.\nA good first step is the $99 Automation Audit (credited toward a build within 30 days). To start: "+CONTACT;
+    }
+    // Cinema
+    if(includesAny(q,["cinema","cinematic","video training","video education","music video","film scene","ai video"])) {
+      if(q.indexOf("filmmaking")!==-1&&q.indexOf("growth")!==-1) { var fd=findDivision(q); if(fd) return divAnswer(fd); }
+      return "AI Cinematic Video Education is a separate offer (not part of automation pricing, quoted separately). It teaches practical AI-powered production: music videos, film scenes, movie sequences, cinematic storytelling, AI character consistency, and AI environment consistency. To enquire, "+CONTACT+" and mention AI Cinematic Video Training.";
+    }
+    // Growth Studio FAQs
+    if(q.indexOf("growth")!==-1||q.indexOf("drop5")!==-1||q.indexOf("studio")!==-1||q.indexOf("division")!==-1) {
+      if(includesAny(q,["ad spend","ads included"])) return "No. For Growth Studio, ad spend is not included in the management fee. You pay Google and Meta directly, so you control the budget. The fee covers strategy, setup, creative direction, and reporting.";
+      if(includesAny(q,["verified","rank #1","rank 1","ranked #1","google business profile verified"])) return "Drop5 helps with Google Business Profile optimization, documentation, and legitimate appeal steps if a profile is suspended. They never promise verification approval or a #1 ranking, and never use bypass tricks that could get your listing banned.";
+      if(includesAny(q,["product images real","real photograph","ai product images"])) return "No. AI product images are AI-generated visuals created from your reference photos — not real photographs. You review and approve every image before use, and limits on shape, materials, or label accuracy are flagged up front.";
+      if(includesAny(q,["same content everywhere","copy paste","cross-post","cross post"])) return "No. Drop5 adapts the hook, dimensions, caption length, and call to action for each platform. Straight copy-paste cross-posting is avoided unless you specifically approve it.";
+      if(includesAny(q,["need from me","need to start","to start"])) return "To start with Growth Studio, you need your brand assets, account access, and your goals. After booking, they send a simple checklist and define everyone's responsibilities in writing.";
+      if(includesAny(q,["billing","how does billing","payment"])) return "Growth Studio billing: all prices in USD. One-time projects are invoiced upfront, and delivery timelines start once they receive your assets. Monthly plans run on 30-day cycles.";
+      if(includesAny(q,["what is included in ai filmmaking","included in ai filmmaking"])) { var af=DIVS[5]; return "AI Filmmaking at Drop5 covers everything from concept to final cut: reference images, storyboards, character sheets, prompt development, and editing. Character consistency uses identity-lock prompts and continuity checks. Tools such as Flow, Grok, Gemini, ElevenLabs, and Suno may be used — subscriptions and usage rights are clarified in your scope.\nFull list: "+af.s+"."; }
+      if(includesAny(q,["free mini audit","mini audit","free audit"])) return "The Free Mini Digital Presence Audit is free with no obligation. Pick one focus — YouTube, social, Google, or your store. You get a 1-page teardown (channel art, top 5 videos, hooks, retention) with 3 fixes you can use right away. They reply within 1 business day. To claim it, use the form on this site or "+CONTACT;
+      if(includesAny(q,["founder","soma","who runs","who founded"])) return "Growth Studio (Drop5 Studios) is founder-led by Soma Singh, Founder of Drop5 Studios, with 8+ years across performance marketing, YouTube growth, social media management, e-commerce strategy, and AI production. Every project is scoped in writing and measured against an agreed baseline.";
+      if(includesAny(q,["demo","example project","portfolio","case stud"])) return "The Growth Studio page shows 6 demonstration projects (they show the approach — they are not presented as completed client engagements):\n1. YouTube Packaging Lift — 7 business days\n2. Local Café — Google Profile Recovery — 5 business days\n3. AI Product Gallery Pack — 6 business days\n4. Shopify Conversion Audit — 5 business days\n5. Faceless Shorts System — 8 business days\n6. Meta Creative Testing — 7 business days\nOpen the Growth Studio page for the full problem, plan, and deliverables for each.";
+      if(includesAny(q,["who is it for","who is this for","who should","for creators","for local"])) return "Growth Studio is for 6 kinds of US businesses:\n• Creators & YouTubers\n• Startups & Founders\n• Local Businesses\n• E-commerce Brands\n• Hotels & Restaurants\n• Coaches & Consultants\nEach plan is built around your goals, not a one-size package.";
+      if(includesAny(q,["process","how drop5 works","how growth studio works","5 step","five step"])) return "How Drop5 works — 5 steps:\n1. Discover — goals, assets, access, limits in a checklist\n2. Audit — review of your presence, analytics, and gaps\n3. Strategize — prioritized roadmap with deliverables, owners, review dates\n4. Execute — production and launch with your approval and revision limits\n5. Review — results measured against your starting point, plus next steps";
+      var dv=findDivision(q); if(dv) return divAnswer(dv);
+      return "Growth Studio is the Drop5 Studios category on this site — content, growth, and performance services in 11 divisions with 175 services total:\n"+DIVS.map(function(d,i){return (i+1)+". "+d.n+" ("+d.c+") — from "+d.p;}).join("\n")+"\nTap 'Growth Studio' in the menu to see everything, or ask me about one division, e.g. 'Tell me about E-Commerce'. There is also a free mini audit to start.";
+    }
+    // Division / service lookup without growth keyword
+    var svc=findService(q); if(svc) return "\""+svc.svc+"\" is part of "+svc.div.n+" in Growth Studio ("+svc.div.c+" services, starts at "+svc.div.p+").\nFull division list: "+svc.div.s+".";
+    var dv2=findDivision(q); if(dv2&&(q.indexOf("growth")!==-1||q.indexOf("drop5")!==-1||q.indexOf("service")!==-1||q.indexOf("price")!==-1||q.indexOf("tell me")!==-1)) return divAnswer(dv2);
+    if(includesAny(q,["testimonial","client result","your clients","reviews from","success stor","case stud"])) return "This website does not list testimonials, client names, or client results, so I can't share any. The Growth Studio demo projects are clearly labelled as demonstrations of the approach, not completed client engagements. For more, "+CONTACT;
+    if(includesAny(q,["how long","delivery time","timeline","turnaround"])) return "For Growth Studio, the site says delivery is typically 5–10 business days after they receive your assets, and each service panel confirms the timeline in the final quote. For automation packages, the site does not state a fixed delivery time — please ask directly: "+CONTACT;
+    if(includesAny(q,["where are you","location","based","country"])) return FALLBACK;
+    if(includesAny(q,["discount","coupon","offer code","cheaper","negotiate"])) return "The website does not list any discounts or coupon codes, so I can't offer one. Current prices are: Audit $99, Starter $249, Growth $499, Business $899, Custom from $1,499. For anything else, "+CONTACT;
+    return FALLBACK;
+  }
+  var welcomed=false;
+  function openChat(){
+    panel.classList.add('open'); fab.setAttribute('aria-expanded','true');
+    if(!welcomed){ welcomed=true; addMsg("Hi, I'm the Ghost Assistant. I answer only from this website — automation services, pricing, the savings calculator, Growth Studio's 175 services, and AI video training.\nAsk me anything, or tap a suggestion below.","bot"); }
+    setTimeout(function(){ input.focus(); },60);
+  }
+  function closeChat(){ panel.classList.remove('open'); fab.setAttribute('aria-expanded','false'); fab.focus(); }
+  fab.addEventListener('click',function(){ panel.classList.contains('open')?closeChat():openChat(); });
+  closeBtn.addEventListener('click',closeChat);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&panel.classList.contains('open')) closeChat(); });
+  function ask(text){
+    var t=(text||'').trim(); if(!t) return;
+    addMsg(t,'user'); input.value='';
+    setTimeout(function(){ addMsg(answer(t),'bot'); },180);
+  }
+  form.addEventListener('submit',function(e){ e.preventDefault(); ask(input.value); });
+  chips.addEventListener('click',function(e){ var b=e.target.closest('.chat-chip'); if(b) ask(b.textContent); });
 })();
 </script>
 </body>
